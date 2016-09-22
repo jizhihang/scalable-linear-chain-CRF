@@ -1,0 +1,17 @@
+find .bashrc
+$ls -a
+or
+locate libopenblas.so
+export BLAS_VERSION=/usr/lib/openblas-base/libopenblas.so
+
+you need to make sure export BLAS_VERSION=/usr/lib/openblas-base/libopenblas.so is at the bottom of your .bashrc file
+
+
+The trick is to make sure your MATLAB/sys/os/glnxa64 only has absolutely needed libraries in it with the rest changed to '.bak' so that matlab will use system libraries.
+for instance my folder looks like:
+libgcc_s.so.1.bak libifcore.so.5.bak libintlc.so.5 libstdc++.so.6.0.13.bak libXm.so.3
+libgfortran.so.3.0.0 libifport.so.5.bak libiomp5.so libstdc++.so.6.bak libXm.so.3.0.2
+libgfortran.so.3.bak libimf.so.bak libirc.so libsvml.so README.libstdc++
+
+mex crf_getRFeature_cpp.cpp -larmadillo
+
